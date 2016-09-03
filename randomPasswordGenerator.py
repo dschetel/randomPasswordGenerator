@@ -1,7 +1,5 @@
 # Generates passwords made of random basic English words
 #
-# Daniel Schetelig
-#
 # Inspiration: http://xkcd.com/936/
 # Word list source (based on Ogden's Basic Word list): https://bitbucket.org/snippets/gravitywell_ltd/bqzj
 
@@ -33,17 +31,32 @@ def getPassword(length):
 
 def displayPassword(length):
     pw = getPassword(length)
-    print pw
+    print(pw)
 
 
 def getUserInput():
-    if len(sys.argv) > 1:
-        userInput = sys.argv[1]
-        userInput = int(userInput)
-    else:
-        userInput = 4
 
-    return userInput
+    if len(sys.argv) == 2:
+
+        while True:
+            try:
+                number = int(sys.argv[1])
+                break
+
+            except ValueError:
+                print("You didn't enter a number..")
+                number = 4
+                break
+
+            except:
+                print("A unknown error occured")
+                number = 4
+                break
+
+    else:
+        number = 4
+
+    return number
 
 
 
