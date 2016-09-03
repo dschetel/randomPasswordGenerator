@@ -10,6 +10,14 @@ basic_english_wordlist = ['a', 'able', 'about', 'account', 'acid', 'across', 'ac
 
 
 
+class PasswordStrength:
+    def __init__(self):
+        import re
+        self.numeric=re.compile('\d')
+        self.loweralpha=re.compile('[a-z]')
+        self.upperalpha=re.compile('[A-Z]')
+        self.symbols=re.compile('[-_.:,;<>?"#$%&/()!@~]')
+        self.num_of_symbols=20 # adjust accordingly...
 
 
     def calculate_entropy(self,password=''):
@@ -103,6 +111,10 @@ def main():
     coolPassword.length = lengthOfPassword
 
     finalPassword = coolPassword.displayPassword()
+
+    # Password strength
+    testPassWordStrength = PasswordStrength()
+    testPassWordStrength.calculate_entropy(finalPassword)
 
 
 main()
