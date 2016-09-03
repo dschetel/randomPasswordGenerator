@@ -33,7 +33,7 @@ class PasswordStrength:
         if self.symbols.search(password):
             charset += self.num_of_symbols
         entropy = log(pow(charset,len(password)),2)
-        print ("Bits of entropy: " + str(entropy))
+        print ("Bits of entropy: {:.2f}".format(entropy))
         return entropy
 
 
