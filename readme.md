@@ -1,5 +1,5 @@
 # randomPasswordGenerator
-writen in Python
+written in Python
 
 Generates really stupid passwords using random english words
 
